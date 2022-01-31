@@ -9,7 +9,6 @@ export class Limbo {
     constructor(bot: Bot) {
         this.bot = bot
         this.isDone = false
-        this.interval = 0
     }
 
     startSpam(): void {

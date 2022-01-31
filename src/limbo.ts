@@ -2,7 +2,7 @@ import { Bot } from "mineflayer"
 
 export class Limbo {
 
-    interval: number
+    interval: ReturnType<typeof setInterval>
     bot: Bot
     isDone: boolean
 

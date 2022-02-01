@@ -15,7 +15,6 @@ export class Queue {
         setInterval(() => {
             console.log(this.queue)
             if(!this.override) {
-                console.log(`/p leave`)
                 this.bot.chat(`/p leave`)
                 if(this.queue != undefined && this.queue.length != 0) {
                     console.log(`/p accept ${this.queue[0]}`)
@@ -38,6 +37,7 @@ export class Queue {
                     this.override = false
                 }, this.seconds*1000)
             } else {
+                console.log(this.queue)
                 this.queue.push(player)
             }
         }

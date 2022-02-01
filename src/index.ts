@@ -26,6 +26,7 @@ bot.on("login", () => {
 })
 
 bot.on("messagestr", message => {
+    console.log(message)
     if(message == 'You were spawned in Limbo.') {
         console.log('Sent to limbo: Bot is ready')
         limbo.stopSpam()
@@ -41,6 +42,7 @@ bot.on("messagestr", message => {
                 let UUID: string = uuiddata.id
                 axios.get(`https://api.hypixel.net/guild?player=${UUID}&key=${key}`).then(res => {
                     let data: GuildResponse = res.data
+                    if(data.guild._id == null) return console.log("Error: _id == null\n\n" + data)
                     if(data.guild._id == guildID) {
                         queue.add(name)
                     }
